@@ -1,0 +1,73 @@
+.stories {
+    width: 75%;
+    margin: 0 auto;
+    box-shadow: 0 3rem 6rem rgba($color-black, .1);
+    background-color: $color-white;
+    border-radius: 3px;
+    padding: 6rem;
+    padding-left: 9rem;
+    font-size: $default-font-size;
+    transform: skewX(-12deg);
+    z-index: 30;
+
+    &:not(:last-child){
+        margin-bottom: 6rem;
+    }
+
+    &__shape{
+        width: 15rem;
+        height: 15rem;
+        float: left;
+        -webkit-shape-outside: circle(50% at 50% 50%);
+        shape-outside: circle(50% at 50% 50%);
+        -webkit-clip-path: circle(50% at 50% 50%);
+        clip-path: circle(50% at 50% 50%);
+        transform: translateX(-3rem) skewX(12deg);
+        position: relative;
+    }
+    &__img{
+        height: 100%;
+        transform: scale(1.4);
+        transition: all .5s;
+    }
+    &__caption{
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, 0%);
+        color: $color-white;
+        text-transform: uppercase;
+        font-size: 1.7rem;
+        text-align: center;
+        opacity: 0;
+        transition: all .5s;
+        backface-visibility: hidden;
+        text-shadow: black 5px 0 8px;
+    }
+    &:hover &__caption {
+        opacity: 1;
+        transform: translate(-50%, -50%);
+    }
+    &:hover &__img{
+        transform: scale(1);
+        filter: blur(3px) brightness(80%);
+    }
+    &__fa-quote-right{
+        color: $color-grey-light-3;
+        position: absolute;
+        top: 27%;
+        right: 10%;
+        font-size: 7rem;
+        opacity: .3;
+        z-index: -1;
+    }
+    &__fa-quote-left{
+        color: $color-grey-light-3;
+        position: absolute;
+        top: 70%;
+        left: 20%;
+        font-size: 7rem;
+        opacity: .3 ;
+        z-index: -1;
+    }
+}
